@@ -2,9 +2,9 @@ FROM alpine:3.8
 
 RUN apk add --no-cache nsd inotify-tools tini openssl
 
-COPY scripts/docker-entrypoint /usr/bin/docker-entrypoint
-COPY scripts/watch-nsd-config /usr/bin/watch-nsd-config
-COPY scripts/watch-zonefiles /usr/bin/watch-zonefiles
+COPY scripts/docker-entrypoint.sh /usr/bin/docker-entrypoint
+COPY scripts/watch-nsd-config.sh /usr/bin/watch-nsd-config
+COPY scripts/watch-zonefiles.sh /usr/bin/watch-zonefiles
 
 RUN chmod +x /usr/bin/docker-entrypoint
 RUN chmod +x /usr/bin/watch-nsd-config
