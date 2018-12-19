@@ -1,6 +1,7 @@
 FROM alpine:3.8
 
-RUN apk add --no-cache nsd inotify-tools tini openssl
+RUN apk -U upgrade && \
+    apk add --no-cache nsd inotify-tools tini openssl
 
 COPY scripts/docker-entrypoint.sh /usr/bin/docker-entrypoint
 COPY scripts/watch-nsd-config.sh /usr/bin/watch-nsd-config
