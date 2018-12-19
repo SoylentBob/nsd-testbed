@@ -6,6 +6,6 @@ inotifywait --monitor --recursive --event modify $ZONEFILESDIR |
       echo "Reloading zone $zone" > /dev/stdout
       nsd-control reload $zone
     else
-      echo "Could not reload zone $zone, because the zonefile is invalid" > /dev/stdout
+      echo "Could not reload zone $zone, because the zonefile is invalid" > /dev/stderr
     fi
   done
