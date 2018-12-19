@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 CONFIGDIR=/etc/nsd
 CONFIG=$CONFIGDIR/nsd.conf
 inotifywait --monitor --event modify $CONFIG |

@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 ZONEFILESDIR=/etc/nsd/zonefiles/
 inotifywait --monitor --recursive --event modify $ZONEFILESDIR |
   while read path _ zone; do

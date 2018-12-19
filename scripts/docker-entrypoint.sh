@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 nsd-control-setup -d /home/dns/
 
