@@ -1,8 +1,8 @@
 #!/bin/bash
-ZONEFILESDIR=/etc/nsd/zonefiles/
-inotifywait --monitor --recursive --event modify $ZONEFILESDIR |
+zonefiles_dir=/etc/nsd/zonefiles/
+inotifywait --monitor --recursive --event modify $zonefiles_dir |
   while read path _ zone; do
-    if nsd-checkzone $zone $ZONEFILESDIR$zone; then
+    if nsd-checkzone $zone $zonefiles_dir$zone; then
       echo "Reloading zone $zone" > /dev/stdout
       nsd-control reload $zone
     else
