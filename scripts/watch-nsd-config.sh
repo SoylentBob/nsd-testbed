@@ -7,6 +7,6 @@ inotifywait --monitor --event modify $CONFIG |
        echo "Reloading $CONFIG" > /dev/stdout
        nsd-control reconfig
      else
-       echo "Could not reload $CONFIG, because the zonefile is invalid" > /dev/stderr
+       echo "Could not reload $CONFIG, because the config is invalid" > /dev/stderr
      fi
    done
