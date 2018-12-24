@@ -1,6 +1,6 @@
 #!/bin/bash
 
-nsd-control-setup -d /home/dns/
+nsd-control-setup -d /home/nsd/
 
 nsd-control start
 

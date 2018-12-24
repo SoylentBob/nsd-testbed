@@ -12,10 +12,10 @@ RUN chmod +x /usr/bin/docker-entrypoint
 RUN chmod +x /usr/bin/watch-nsd-config
 RUN chmod +x /usr/bin/watch-zonefiles
 
-RUN adduser -S dns
+RUN mkdir -p /home/nsd/
+RUN chown -c nsd /home/nsd
 
-# TODO: NSD should be run as a non root user
-#USER dns
+USER nsd
 
 ENTRYPOINT ["/sbin/tini", "--"]
 CMD ["sh", "/usr/bin/docker-entrypoint"]
