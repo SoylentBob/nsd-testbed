@@ -1,5 +1,9 @@
 FROM alpine:3.8
 
+EXPOSE 8053/tcp 8053/udp
+
+VOLUME ["/etc/nsd"]
+
 RUN apk -U upgrade && \
     apk add --no-cache nsd inotify-tools tini openssl && \
     rm -rf /var/cache/apk/*
